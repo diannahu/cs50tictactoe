@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet"/>
+        <title>CS50 Tic Tac Toe</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="board.js"></script>
+        <script src="move.js"></script>
+        <script src="location.js"></script>
+        <script src="index.js"></script>
+        
+        <script>
+            newGame(9);
+            document.write('<h1>Tic Tac Toe</h1>');
+            document.write('<h2>(AI YAI YAI!)</h2>');
+            document.write('<table>');
+            for (var r = 0; r < board.size; r++) {
+                document.write('<tr>');
+                for (var c = 0; c < board.size; c++) {
+                    document.write('<td><input type="image" src="blank.png" class="tile" id="' + r + c + '" value="" onclick="squareClicked(this);"></td>');
+                }
+                document.write('</tr>');
+            }
+            document.write('</table>');
+        </script>
+
+    </head>
+    
+    <body>
+        <p id="status">A Hard Game</p>
+        <input type="button" id="neweasy" value="New EASY Game" onclick = "newGame(1);" />
+        <input type="button" id="newmed" value="New MEDIUM Game" onclick = "newGame(4);" />
+        <input type="button" id="newhard" value="New HARD Game" onclick = "newGame(9);" />
+    </body>
+</html>
